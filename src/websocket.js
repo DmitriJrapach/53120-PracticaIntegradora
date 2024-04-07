@@ -1,5 +1,5 @@
-import { productFSService } from "./services/productFSService.js";
-const ProductService = new productFSService('products.json');
+import { productManagerFS } from "./dao/productManagerFS.js";
+const ProductService = new productManagerFS('products.json');
 
 export default (io) => {
     io.on("connection", (socket) => {

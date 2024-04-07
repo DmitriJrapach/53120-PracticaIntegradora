@@ -1,10 +1,10 @@
 import fs from 'fs';
 
-class cartFSService {
+class cartManagerFS {
     
-    constructor(file, productFSService) {
+    constructor(file, productManagerFS) {
         this.file = file;
-        this.productFSService = productFSService;
+        this.productManagerFS = productManagerFS;
     }
 
     async getAllCarts() {
@@ -61,7 +61,7 @@ class cartFSService {
 
     async addProductByID(cid, pid) {
         //Check if exist product
-        await this.productFSService.getProductByID(pid);
+        await this.productManagerFS.getProductByID(pid);
 
         const carts = await this.getAllCarts();
         let i = 0;
@@ -102,4 +102,4 @@ class cartFSService {
     }
 }
 
-export { cartFSService };
+export { cartManagerFS };

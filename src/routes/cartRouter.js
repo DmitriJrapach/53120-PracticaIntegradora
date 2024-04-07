@@ -1,11 +1,11 @@
 
 import { Router } from 'express';
-import { productFSService } from '../services/productFSService.js';
-import { cartFSService } from '../services/cartFSService.js';
+import { productManagerFS } from '../dao/productManagerFS.js';
+import { cartManagerFS } from '../dao/cartManagerFS.js';
 
 const router = Router();
-const ProductService = new productFSService('products.json');
-const CartService = new cartFSService('carts.json', ProductService);
+const ProductService = new productManagerFS('products.json');
+const CartService = new cartManagerFS('carts.json', ProductService);
 
 router.get('/:cid', async (req, res) => {
 

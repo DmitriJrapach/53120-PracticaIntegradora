@@ -7,8 +7,13 @@ import viewsRouter from './routes/viewsRouter.js';
 import __dirname from './utils/constantsUtil.js';
 import {Server} from 'socket.io';
 import websocket from './websocket.js';
+import mongoose from "mongoose";
 
 const app = express();
+//MongoDB conect 
+const uri = "mongodb+srv://dmitri:<123>@cluster0.u7ei4vo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+mongoose.connect(uri);
+
 
 //Handlebars Config
 app.engine('handlebars', handlebars.engine());

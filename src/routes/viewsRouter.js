@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import { productFSService } from '../services/productFSService.js';
+import { productManagerFS } from '../dao/productManagerFS.js';
 
 const router = Router();
-const ProductService = new productFSService('products.json');
+const ProductService = new productManagerFS('products.json');
 
 router.get('/', async (req, res) => {
     res.render(

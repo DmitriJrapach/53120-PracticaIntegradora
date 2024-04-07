@@ -1,6 +1,6 @@
 import fs from "fs";
 
-class productFSService {
+class productManagerFS {
   constructor(file) {
     this.file = file;
   }
@@ -107,7 +107,7 @@ class productFSService {
         await fs.promises.writeFile(this.file, JSON.stringify(products, null, "\t"));
 
         return products[i];
-    }catch(Error) {
+    }catch(error) {
         throw new Error ("Error al actualizar el producto");
     }
   }
@@ -126,10 +126,10 @@ class productFSService {
         await fs.promises.writeFile(this.file, JSON.stringify(productsFilter, null, "\t"));
 
         return productsFilter;
-    } catch(e) {
+    } catch(error) {
         throw new Error(`Error al eliminar el producto ${pid}`);
     }
   }
 }
 
-export { productFSService };
+export { productManagerFS };
