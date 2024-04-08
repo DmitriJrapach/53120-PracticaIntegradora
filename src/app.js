@@ -11,7 +11,7 @@ import mongoose from "mongoose";
 
 const app = express();
 //MongoDB conect 
-const uri = "mongodb+srv://dmitri:<123>@cluster0.u7ei4vo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = "mongodb+srv://dmitri:123@cluster0.u7ei4vo.mongodb.net/ecommerce?retryWrites=true&w=majority&appName=Cluster0";
 mongoose.connect(uri);
 
 

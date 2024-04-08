@@ -1,4 +1,4 @@
-import fproductModel from "./models/productModel.js";
+import productModel from "./models/productModel.js";
 
 class productManagerDB {
   
@@ -31,6 +31,7 @@ class productManagerDB {
     try {
         const result = await productModel.create({ title, description, code, price, stock, category, thumbnails: thumbnails ?? []});
         return result;
+        console.log("producto creado")
     } catch (error) {
         console.error(error)
         throw new Error("Error al crear el producto");
