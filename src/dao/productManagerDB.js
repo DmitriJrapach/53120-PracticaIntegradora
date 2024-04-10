@@ -5,7 +5,7 @@ class productManagerDB {
 
   async getAllProducts() {
     try {
-      return await productModel.find()
+      return await productModel.find().lean();
     } catch (error) {
       console.error(error.message);
       throw new Error ("Error al buscar los productos");
@@ -50,7 +50,7 @@ class productManagerDB {
 
   async deleteProduct(pid) {
     try {
-        const result = await productManagerDB.deleteOne({__id: pid})
+        const result = await productModel.deleteOne({__id: pid})
         if (result.deleteCount === 0) throw new Error(`El producto ${pid} no existe!`);
 
         return result;

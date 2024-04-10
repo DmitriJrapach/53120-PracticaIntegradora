@@ -1,7 +1,3 @@
-* {
-    background-color: black;
-    color: white;
-}
 
 hr {
     width: 100%;
@@ -58,4 +54,23 @@ button {
 
 #button-delete {
     background: #d51515;
+}
+body {
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+input {
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+
+.boxMessages {
+    align-self: flex-start;
+    margin-left: 10px;
 }

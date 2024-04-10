@@ -10,9 +10,34 @@ import websocket from './websocket.js';
 import mongoose from "mongoose";
 
 const app = express();
+
 //MongoDB conect 
 const uri = "mongodb+srv://dmitri:123@cluster0.u7ei4vo.mongodb.net/ecommerce?retryWrites=true&w=majority&appName=Cluster0";
-mongoose.connect(uri);
+
+async function connectToMongoDB() {
+    try {
+        await mongoose.connect(uri);
+        console.log('Conexión exitosa a MongoDB Atlas');
+    } catch (error) {
+        console.error('Error al conectar a MongoDB:', error);
+    }
+}
+
+// Llamar a la función para establecer la conexión
+connectToMongoDB();
+
+// const conexion = async()=>{
+//     try{
+//         //en este caso la conexion es a mi bbdd Mongodb local
+//           await mongoose.connect("mongodb://127.0.0.1:27017", {dbName: "usuarios"})     
+//         console.log("conectado a la bbdd en mongo Compas")
+//     }catch(error){
+//         console.log("fallo conexion")
+//     }
+// }
+
+
+// conexion()
 
 
 //Handlebars Config
@@ -38,3 +63,4 @@ const httpServer = app.listen(PORT, () => {
 const io = new Server(httpServer);
 
 websocket(io);
+
