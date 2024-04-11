@@ -4,6 +4,8 @@ import { productManagerDB } from "./dao/productManagerDB.js";
 import { messageManagerDB } from "./dao/messageManagerDB.js";
 import messageModel from "./dao/models/messageModel.js";
 
+const ProductService = new productManagerDB();
+
 export default (io) => {
     // Manejador de eventos para la conexión de WebSocket
     io.on("connection", (socket) => {
